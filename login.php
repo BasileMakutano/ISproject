@@ -16,28 +16,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Log in</title><link rel="stylesheet" href="style.css">
-</head><body>
-<div class="auth">
-  <aside class="auth-side">
-    <div class="brand">CAT2 Student Portal</div>
-    <div><h1>Good to see you again.</h1><p>Log in to read and share class feedback.</p></div>
-    <span></span>
-  </aside>
-  <main class="auth-main"><div class="card">
-    <h2>Log in</h2>
-    <p class="sub">Enter your account details.</p>
-    <?php if ($msg): ?><div class="alert err" role="alert"><?= htmlspecialchars($msg) ?></div><?php endif; ?>
-    <form method="POST">
-      <label for="username">Username</label>
-      <input id="username" name="username" autocomplete="username" required autofocus>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" required>
-      <button class="btn" type="submit">Log in</button>
-    </form>
-    <p class="alt">New here? <a href="signup.php">Create an account</a></p>
-  </div></main>
-</div>
-</body></html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="auth">
+        <aside class="auth-side">
+            <div class="brand">Student Portal</div>
+            <div>
+                <h1>Good to see you again.</h1>
+                <p>Log in to read and share class feedback.</p>
+            </div>
+            <span></span>
+        </aside>
+        <main class="auth-main">
+            <div class="card">
+                <h2>Log in</h2>
+                <p class="sub">Enter your account details.</p>
+                <?php if ($msg): ?>
+                    <div class="alert err" role="alert"><?= htmlspecialchars($msg) ?></div><?php endif; ?>
+                <form method="POST">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" autocomplete="username" required autofocus>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                    <button class="btn" type="submit">Log in</button>
+                </form>
+                <p class="alt">New here? <a href="signup.php">Create an account</a></p>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
