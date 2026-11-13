@@ -13,7 +13,7 @@ if (!isset($_SESSION["user"])) {
 </head>
 
 <body>
-    <h2>Welcome, <?= htmlspecialchars($_SESSION["user"]) ?>!</h2>
+    <h2>Welcome, dear friend<?= htmlspecialchars($_SESSION["user"]) ?>!</h2>
     <p>Login successful.</p>
     <a href="feedback.php">Feedback form</a> | <a href="logout.php">Logout</a>
 </body>
