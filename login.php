@@ -12,25 +12,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: dashboard.php");
         exit;
     }
-    $msg = "Invalid username or password.";
+    $msg = "Username or password is incorrect. Check both and try again.";
 }
 ?>
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Login</title>
-</head>
-
-<body>
-    <h2>Login</h2>
-    <p><?= htmlspecialchars($msg) ?></p>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="auth">
+  <aside class="auth-side">
+    <div class="brand">CAT2 Student Portal</div>
+    <div><h1>Good to see you again.</h1><p>Log in to read and share class feedback.</p></div>
+    <span></span>
+  </aside>
+  <main class="auth-main"><div class="card">
+    <h2>Log in</h2>
+    <p class="sub">Enter your account details.</p>
+    <?php if ($msg): ?><div class="alert err" role="alert"><?= htmlspecialchars($msg) ?></div><?php endif; ?>
     <form method="POST">
-        <input name="username" placeholder="Username" required><br>
-        <input name="password" type="password" placeholder="Password" required><br>
-        <button type="submit">Login</button>
+      <label for="username">Username</label>
+      <input id="username" name="username" autocomplete="username" required autofocus>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button class="btn" type="submit">Log in</button>
     </form>
-    <a href="signup.php">Create an account</a>
-</body>
-
-</html>
+    <p class="alt">New here? <a href="signup.php">Create an account</a></p>
+  </div></main>
+</div>
+</body></html>
